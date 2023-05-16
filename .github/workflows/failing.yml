@@ -1,0 +1,13 @@
+name: Failing workflow
+
+on: push
+
+jobs:
+  failing:
+    runs-on: macos-13
+    timeout-minutes: 5
+    steps:
+      - name: Do something
+        run: echo "I am doing something"
+      - name: Fail after 20 seconds
+        run: sleep 20 && false
